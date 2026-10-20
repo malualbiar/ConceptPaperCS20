@@ -1,0 +1,17 @@
+\section{Scope of the study}
+
+\subsection{Geographical and user scope}
+
+The study will focus on selected hotels and restaurants in Kampala, Uganda, subject to permission and access. The participants will be staff who handle waste, collection personnel, and people who could receive the separated materials. The prototype will first be tested in a controlled setting, before any supervised trial at a site. Airports remain a possible future application, but we have left them out of the first prototype to keep the study manageable.
+
+\subsection{System scope}
+
+The prototype will take one supported item at a time and try to classify it as organic, plastic, paper or glass. A camera and a small computing unit will handle classification, and a controller will run the sorting mechanism and the compartment sensors. The final hardware will be chosen during design. We will not assume that any single unspecified sensor can reliably tell organic waste or plastic apart. Items that are not recognised, are mixed, or are classified with low confidence will be held for manual checking, and the bin will not sort anything into a compartment that is already full.
+
+Fill level will be measured separately for each compartment. Time-stamped readings and emptying events will be stored to support prediction. The prediction will be an estimate of the time remaining before a configurable collection threshold is reached, not a claim about exactly when the bin will overflow. A simple estimate based on the recent fill rate will be the baseline against which the prediction model is evaluated. Where there is not enough history, the application will show the current fill level and threshold alerts, and will not present a forecast it cannot support.
+
+The mobile application will show fill levels, predictions and alerts. Authorised users will be able to acknowledge collection requests and record the collection time, the waste category and the recipient. Suitable organic material may be offered to composting or other approved recovery users once we have confirmed what they will accept. Plastic, paper and glass will only be offered to recipients who accept those materials. The application will record these transfers, but it will not guarantee a market or arrange the physical transport.
+
+\subsection{Study boundaries}
+
+The study covers the study of the current situation, requirements analysis, design, implementation and evaluation within the academic project period. It leaves out hazardous and medical waste, liquids, metal sorting, large mixed loads, vehicle route optimisation and payment services, and it will not attempt citywide deployment. Classification and prediction will be assessed on data kept apart from the training data. For prediction, we will test on later observations so that the model is not judged on its own training history. If the data collection period turns out to be short, we will state this as a limitation of the findings.
