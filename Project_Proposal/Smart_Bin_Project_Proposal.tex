@@ -9,6 +9,12 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{caption}
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
 
 \setstretch{1.15}
 \setlength{\parindent}{0pt}
@@ -17,7 +23,7 @@
 \Urlmuskip=0mu plus 2mu
 \captionsetup{font=small,labelfont=bf}
 
-\newcommand{\groupname}{Group 20}
+\newcommand{\groupname}{CS27-20}
 \newcommand{\supervisor}{Dr.\ Dragule Swaib}
 \newcommand{\supervisoremail}{dragule@gmail.com}
 
@@ -25,12 +31,13 @@
 \newcommand{\doctypelower}{project proposal}
 \begin{document}
 %-------------------------------------------------- Cover page
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \centering
 \vspace*{0cm}
 \includegraphics[width=0.97\textwidth]{logo-000.png}\par
 \vspace{1.2cm}
-{\LARGE\bfseries A smart bin system for classification, fill-up\\prediction and smart disposal\par}
+{\LARGE\bfseries A SMART BIN SYSTEM FOR CLASSIFICATION, FILL-UP\\PREDICTION AND SMART DISPOSAL\par}
 \vspace{0.8cm}
 by\par
 \vspace{0.5cm}
@@ -39,7 +46,7 @@ by\par
 {\large\bfseries Department of Computer Science\\
 School of Computing \& Informatics Technology\par}
 \vspace{0.7cm}
-{\itshape A \doctype{} Submitted to the\\
+{A \doctype{} Submitted to the\\
 School of Computing and Informatics Technology for the Study Leading to a\\
 Project Report in Partial Fulfilment of the requirements\\
 for the Award of the Degree of Bachelor of Science in\\
@@ -56,6 +63,7 @@ October, 2026\par
 \end{titlepage}
 
 %-------------------------------------------------- Front matter
+\hypersetup{pageanchor=true}
 \pagenumbering{roman}
 
 \chapter*{Declaration}
@@ -93,8 +101,8 @@ Date: \dotfill\hspace{4cm}
 
 \vspace{2em}
 \supervisor\\
-School of Computing \& IT\\
-College of Computing \& IT\\
+School of Computing and Informatics Technology\\
+College of Computing and Information Sciences\\
 Makerere University\\
 \supervisoremail
 
@@ -142,7 +150,7 @@ Kampala shows the problem at city level. KCCA puts the waste generated in the ci
 
 The reasons for the gap have built up over several years. Collection is shared between KCCA and private contractors \cite{kccand}. Reports on the arrangement mention too few trucks and frequent breakdowns, limited funding, contractors who collect on irregular schedules or overcharge, and residents who do not pay collection fees \cite{ngwomoya,mwesigwa}. The city has also kept growing. KCCA lists population growth, economic growth and rising waste generation among the reasons its main landfill filled up \cite{kcca2026}.
 
-Most of the waste is also not separated at source. KCCA's own figures put the composition at about 85 percent organic waste, 8 percent plastic, 2 percent paper and 5 percent other material \cite{kcca2026}. Material with a use, such as food waste that could go to farms or compost, is therefore likely to be carried to the same dump as everything else. KCCA has asked people to separate organic and inorganic waste at source \cite{kccand}. Okello \cite{okello} names low public awareness, weak enforcement and a lack of reliable data among the problems, and Mwesigwa \cite{mwesigwa} suggests that degradable waste could be used to produce biogas.
+Most of the waste is also not separated at source. KCCA's own figures put the composition at about 85 percent organic waste, 8 percent plastic, 2 percent paper and 5 percent other material \cite{kcca2026}. Material with a use, such as food waste that could go to farms or compost, is therefore likely to be carried to the same dump as everything else. KCCA has asked people to separate organic and inorganic waste at source \cite{kccand}. Okello \cite{okello} names low public awareness, weak enforcement and a lack of reliable data among the problems, and Mwesigwa \cite{mwesigwa} suggests that degradable waste could be used to produce biogas. Ssepuuya et al. \cite{ssepuuya} note that while huge quantities of food waste are generated across Kampala and stakeholders show willingness to engage in alternative circular uses (such as animal feed or insect farming), the lack of effective source-separation and structured collection networks remains the major bottleneck.
 
 The Kiteezi landfill is where these problems ended up. It opened in 1996 on 39 acres and was receiving about 1,200 tonnes a day when it was closed \cite{kcca2026}. According to Mwesigwa \cite{mwesigwa}, it had run for about ten years longer than it was meant to, and Africanews \cite{africanews} reports that plans to move waste disposal elsewhere had stalled since 2016. After heavy rain in August 2024 a large part of the waste mound collapsed onto the houses next to it \cite{petley,okello}. KCCA reported that at least 35 people died \cite{kcca2024b}. A year later the site was no longer in official use but was still giving off methane, and disposal had moved to a new site in Mpigi that the National Forestry Authority said encroaches on a protected area \cite{afp}. Among the reforms Okello \cite{okello} recommends are waste diversion strategies and more awareness of waste separation. We take from this that a lot of what reaches the dump could have been kept out of it if it had been separated and collected on time at the places where it is produced.
 
@@ -152,13 +160,13 @@ Some smart bin work has already been done locally and in the region. Musoke \cit
 
 The image data also has to match the waste classes we plan to use. TrashNet has 2,527 images of glass, paper, cardboard, plastic, metal and general trash, but nothing labelled as organic \cite{yang,white}. It may help with early experiments on some classes, but we will have to collect our own images, especially of food waste and of items photographed under the conditions the prototype will work in.
 
-We chose hotels and restaurants because they prepare food and use a lot of packaging. The preliminary study will establish which types of waste the participating sites produce, how their staff separate it and how collection is arranged. We will also look at space, cleaning, electricity and network access, since a bin that is hard to use or keep clean may be ignored even if its electronics work.
+We chose hotels and restaurants because they prepare food and use a lot of packaging. In a study of restaurants at Makerere University in Kampala, Walina \cite{walina} documented that high volumes of food waste are generated daily, but inadequate storage options and unsegregated bins cause odour, pests and delayed collection. The preliminary study will establish which types of waste the participating sites produce, how their staff separate it and how collection is arranged. We will also look at space, cleaning, electricity and network access, since a bin that is hard to use or keep clean may be ignored even if its electronics work.
 
 Our proposed system brings classification, compartment monitoring, fill-up prediction and collection support together in one prototype. A mobile application will show the status of the bin, alert authorised collectors and record where the separated waste is taken. By smart disposal we mean sending each recognised item to the right compartment and arranging for it to be taken to a suitable recipient. We are not claiming that the bin treats the waste itself, or that every item can be recycled.
 
 \section{Problem statement}
 
-The background points to a chain of problems. Waste in Kampala is mostly not separated at source, a large share of it is not collected at all, and what is collected goes to a small number of disposal sites. Hotels and restaurants produce food waste and packaging every day, and unless the waste is separated where it is produced, material that could be recovered is mixed again and joins the rest. The collectors who serve these sites work on schedules that have been reported as irregular \cite{mwesigwa}, and they have no way of knowing how full a bin is before they arrive. We expect that bins at some sites are overflowing when the collector comes, while others are emptied when they are half full, and we will check this at the selected sites through observation and interviews. We do not assume that the situation is the same across Uganda.
+The background points to a chain of problems. Waste in Kampala is mostly not separated at source, a large share of it is not collected at all, and what is collected goes to a small number of disposal sites. Hotels and restaurants produce food waste and packaging every day, and unless the waste is separated where it is produced, material that could be recovered is mixed again and joins the rest. Local investigations confirm that restaurant waste in Kampala is often left unsegregated in substandard bins \cite{walina}, even though clean food waste has high potential for alternative circular recovery \cite{ssepuuya}. The collectors who serve these sites work on schedules that have been reported as irregular \cite{mwesigwa}, and they have no way of knowing how full a bin is before they arrive. We expect that bins at some sites are overflowing when the collector comes, while others are emptied when they are half full, and we will check this at the selected sites through observation and interviews. We do not assume that the situation is the same across Uganda.
 
 Earlier prototypes show that automatic identification and remote monitoring can be done. The sources we have seen, however, do not show a prototype that combines four-class sorting, a separate fill level for each compartment, a prediction of the time until a collection threshold is reached, and a record of where the separated waste goes, tested in hotels and restaurants in Uganda. Several of them report no measured results or only results from open datasets. The specific problem of this study is therefore the lack of timely, per-compartment information on what waste has been separated, how full each compartment is and when it will need to be collected. We will develop and test a workflow that supplies this information to hotel staff and collectors under the conditions at selected sites.
 
@@ -220,7 +228,7 @@ Okello \cite{okello} writes about Kampala after the Kiteezi collapse and lists t
 
 \section{Waste classification}
 
-Waste classification is usually treated as an image classification problem. The dataset most often used is TrashNet, which has 2,527 images in six classes (glass, paper, cardboard, plastic, metal and trash) \cite{yang,white}. It has no organic class. This matters for Kampala, where KCCA puts about 85 percent of the waste in the organic category \cite{kcca2026}. A model trained only on TrashNet could not identify most of the waste in the city, so a project in this setting has to collect its own images of food waste.
+Waste classification is usually treated as an image classification problem. The dataset most often used is TrashNet, which has 2,527 images in six classes (glass, paper, cardboard, plastic, metal and trash) \cite{yang,white}. It has no organic class. This matters for Kampala, where KCCA puts about 85 percent of the waste in the organic category \cite{kcca2026}. A model trained only on TrashNet could not identify most of the waste in the city, so a project in this setting has to collect its own images of food waste. Local studies support this emphasis: Ssepuuya et al. \cite{ssepuuya} analyze food waste streams across Kampala and find strong readiness for circular recovery (e.g., animal feed and insect farming), but observe that poor separation at source keeps valuable organic material mixed with municipal refuse. Specifically in restaurant operations, Walina \cite{walina} examined campus food facilities in Kampala, reporting high daily food waste volumes and revealing that existing storage practices rely on makeshift, unsegregated containers that cause odour, hygiene issues and delayed collection.
 
 White et al. \cite{white} built WasteNet by applying transfer learning to a DenseNet model pre-trained on ImageNet. They trained only the top layer first and then unfroze the rest gradually. On the TrashNet test set the model had an accuracy, precision, recall and F1 of 0.970, ahead of DenseNet169 at 0.953 and AlexNet at 0.784. The model was designed to run on a Jetson Nano without a cloud connection. The paper does not report inference time or power use, so it says little about how practical the model is on a bin. The result also comes from a split of a single public dataset, so it does not tell us how the model would do on waste photographed in a different place.
 
@@ -253,6 +261,7 @@ Komane and Mathonsi \cite{komane} & Design with ultrasonic sensors, GPS, GSM, ca
 Kwagala and Badoru \cite{kwagala} & Smart bins and analytics for routes and billing in Kampala & Results given are expected, not measured (abstract only)\\
 Musoke \cite{musoke} & Fill-level sensors, material detection and cloud reporting (Makerere) & Performance and deployment unknown (abstract only)\\
 Turyahebwa \cite{turyahebwa} & Camera identification, sorting into compartments, LTE reporting (Makerere) & Performance and deployment unknown (abstract only)\\
+Walina \cite{walina} & Field assessment of restaurant food waste generation and storage at Makerere & Focuses on manual handling; does not implement a smart bin system\\
 \hline
 \end{tabular}
 \caption{Existing smart bin work reviewed}
@@ -261,7 +270,7 @@ Turyahebwa \cite{turyahebwa} & Camera identification, sorting into compartments,
 
 \section{Gap and justification of the proposed solution}
 
-From the sources we reviewed, the pieces of the proposed system exist separately. Classification at the edge has been shown on open datasets, fill-level measurement and forecasting have been shown on municipal bins, and two Makerere projects and one Busitema dissertation work on smart bins in Uganda. What we did not find is a single prototype that (a) classifies organic, plastic, paper and glass waste with its own food-waste images, (b) measures the fill level of each compartment, (c) predicts the time to a collection threshold and compares it with a simple baseline, and (d) records the handover to a recipient, with all four tested in hotels or restaurants in Uganda and reported with measured results. We have not read the full Makerere reports, so this gap may be narrower than the abstracts suggest. We will check this during the study of the current situation.
+From the sources we reviewed, the pieces of the proposed system exist separately. Classification at the edge has been shown on open datasets, fill-level measurement and forecasting have been shown on municipal bins, and prior studies at Makerere \cite{musoke,turyahebwa,walina} and Busitema \cite{kwagala} examine aspects of waste handling and smart bins in Uganda. What we did not find is a single prototype that (a) classifies organic, plastic, paper and glass waste with its own food-waste images, (b) measures the fill level of each compartment, (c) predicts the time to a collection threshold and compares it with a simple baseline, and (d) records the handover to a recipient, with all four tested in hotels or restaurants in Uganda and reported with measured results. We have not read the full Makerere reports, so this gap may be narrower than the abstracts suggest. We will check this during the study of the current situation.
 
 The case for the proposed solution rests on three points from the literature. First, the problem is real and documented locally: low collection rates, mixed waste, and a landfill collapse that cost lives \cite{mwesigwa,kcca2024b,petley}. Second, the technology is mature enough to build a prototype at low cost, as Li and Grammenos \cite{li} show for the hardware. Third, the evidence does not carry over to our setting, because the datasets lack organic waste and the reported accuracies are from conditions that are easier than a kitchen. A prototype tested on site is the way to find out.
 
@@ -318,7 +327,7 @@ We will use four methods.
 \item \textbf{Observation.} A checklist for how waste is separated, stored and collected, where the bins are placed, and what space, power and network access are available.
 \item \textbf{Interviews.} Semi-structured interviews with staff, collectors and recipients about current practice, collection frequency, problems such as overflow, and what they would want from a system like ours.
 \item \textbf{Waste audit.} A short audit at each site in which we record the types of waste produced, to confirm whether the four classes cover most of it. KCCA's composition figures are for the whole city \cite{kcca2026} and may not hold for a hotel kitchen.
-\item \textbf{Document review.} Reading the full reports of the Makerere projects \cite{musoke,turyahebwa} and the other systems in Chapter 2.
+\item \textbf{Document review.} Reading the full reports of the Makerere studies \cite{musoke,turyahebwa,walina} and published work on circular waste streams in Kampala \cite{ssepuuya}.
 \end{itemize}
 
 Interview notes will be coded by theme, and counts from the checklist and audit will be summarised in tables.

@@ -9,6 +9,12 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{caption}
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
 
 \setstretch{1.15}
 \setlength{\parindent}{0pt}
@@ -17,7 +23,7 @@
 \Urlmuskip=0mu plus 2mu
 \captionsetup{font=small,labelfont=bf}
 
-\newcommand{\groupname}{Group 20}
+\newcommand{\groupname}{CS27-20}
 \newcommand{\supervisor}{Dr.\ Dragule Swaib}
 \newcommand{\supervisoremail}{dragule@gmail.com}
 
@@ -25,12 +31,13 @@
 \newcommand{\doctypelower}{concept paper}
 \begin{document}
 %-------------------------------------------------- Cover page
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \centering
 \vspace*{0cm}
 \includegraphics[width=0.97\textwidth]{logo-000.png}\par
 \vspace{1.2cm}
-{\LARGE\bfseries A smart bin system for classification, fill-up\\prediction and smart disposal\par}
+{\LARGE\bfseries A SMART BIN SYSTEM FOR CLASSIFICATION, FILL-UP\\PREDICTION AND SMART DISPOSAL\par}
 \vspace{0.8cm}
 by\par
 \vspace{0.5cm}
@@ -39,7 +46,7 @@ by\par
 {\large\bfseries Department of Computer Science\\
 School of Computing \& Informatics Technology\par}
 \vspace{0.7cm}
-{\itshape A \doctype{} Submitted to the\\
+{A \doctype{} Submitted to the\\
 School of Computing and Informatics Technology for the Study Leading to a\\
 Project Report in Partial Fulfilment of the requirements\\
 for the Award of the Degree of Bachelor of Science in\\
@@ -56,6 +63,7 @@ October, 2026\par
 \end{titlepage}
 
 %-------------------------------------------------- Front matter
+\hypersetup{pageanchor=true}
 \pagenumbering{roman}
 
 \chapter*{Declaration}
@@ -93,8 +101,8 @@ Date: \dotfill\hspace{4cm}
 
 \vspace{2em}
 \supervisor\\
-School of Computing \& IT\\
-College of Computing \& IT\\
+School of Computing and Informatics Technology\\
+College of Computing and Information Sciences\\
 Makerere University\\
 \supervisoremail
 
@@ -117,6 +125,7 @@ We thank our supervisor, \supervisor, for guiding us as we developed this projec
 \input{scope_of_the_study}
 \input{significance_of_the_study}
 
+\renewcommand{\bibname}{References}
 \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{IEEEtran}
 \bibliography{references}
