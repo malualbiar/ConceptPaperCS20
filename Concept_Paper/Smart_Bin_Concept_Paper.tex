@@ -9,6 +9,12 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{caption}
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
 
 \setstretch{1.15}
 \setlength{\parindent}{0pt}
@@ -17,7 +23,7 @@
 \Urlmuskip=0mu plus 2mu
 \captionsetup{font=small,labelfont=bf}
 
-\newcommand{\groupname}{\textcolor{red}{[Group name]}}
+\newcommand{\groupname}{CS27-20}
 \newcommand{\supervisor}{Dr.\ Dragule Swaib}
 \newcommand{\supervisoremail}{dragule@gmail.com}
 
@@ -25,12 +31,13 @@
 \newcommand{\doctypelower}{concept paper}
 \begin{document}
 %-------------------------------------------------- Cover page
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \centering
 \vspace*{0cm}
 \includegraphics[width=0.97\textwidth]{logo-000.png}\par
 \vspace{1.2cm}
-{\LARGE\bfseries A smart bin system for classification, fill-up\\prediction and smart disposal\par}
+{\LARGE\bfseries A SMART BIN SYSTEM FOR CLASSIFICATION, FILL-UP\\PREDICTION AND SMART DISPOSAL\par}
 \vspace{0.8cm}
 by\par
 \vspace{0.5cm}
@@ -39,7 +46,7 @@ by\par
 {\large\bfseries Department of Computer Science\\
 School of Computing \& Informatics Technology\par}
 \vspace{0.7cm}
-{\itshape A \doctype{} Submitted to the\\
+{A \doctype{} Submitted to the\\
 School of Computing and Informatics Technology for the Study Leading to a\\
 Project Report in Partial Fulfilment of the requirements\\
 for the Award of the Degree of Bachelor of Science in\\
@@ -56,6 +63,7 @@ October, 2026\par
 \end{titlepage}
 
 %-------------------------------------------------- Front matter
+\hypersetup{pageanchor=true}
 \pagenumbering{roman}
 
 \chapter*{Declaration}
@@ -67,7 +75,7 @@ We, Group \groupname, declare that this \doctypelower{} is our own original work
 \renewcommand{\arraystretch}{2.1}
 \begin{tabular}{@{}c>{\raggedright\arraybackslash}p{5.3cm}l>{\raggedright\arraybackslash}p{3.4cm}@{}}
 \hline
-\textbf{\#} & \textbf{Names} & \textbf{Registration Number} & \textbf{Signature}\\
+\textbf{No.} & \textbf{Names} & \textbf{Registration Number} & \textbf{Signature}\\
 \hline
 1 & Nambirige Eron & 24/U/1026 & \\
 2 & Nagawa Sandra Robinah & 24/U/08037/PS & \\
@@ -93,8 +101,8 @@ Date: \dotfill\hspace{4cm}
 
 \vspace{2em}
 \supervisor\\
-School of Computing \& IT\\
-College of Computing \& IT\\
+School of Computing and Informatics Technology\\
+College of Computing and Information Sciences\\
 Makerere University\\
 \supervisoremail
 
@@ -118,70 +126,8 @@ We thank our supervisor, \supervisor, for guiding us as we developed this projec
 \input{significance_of_the_study}
 
 \renewcommand{\bibname}{References}
-\begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{References}
-\setlength{\itemsep}{0.5em}
-
-\bibitem{africanews}
-Africanews. (2024). \emph{Death toll in Kampala landslide rises to 34, rescue operations continue}. \url{https://africanews.com/2024/08/16/death-toll-in-kampala-landslide-rises-to-34-rescue-operations-continue}
-
-\bibitem{afp}
-Agence France-Presse. (2025, August 6). \emph{A year on, Ugandans still suffering from deadly garbage collapse}. EWN. \url{https://www.ewn.co.za/2025/08/06/a-year-on-ugandans-still-suffering-from-deadly-garbage-collapse}
-
-\bibitem{ahmed}
-Ahmed, S., Mubarak, S., Du, J. T., and Wibowo, S. (2022). Forecasting the status of municipal waste in smart bins using deep learning. \emph{International Journal of Environmental Research and Public Health}, 19(24), 16798. \url{https://doi.org/10.3390/ijerph192416798}
-
-\bibitem{kcca2024a}
-Kampala Capital City Authority (KCCA). (2024a, July 22). \emph{KCCA to enhance waste management in 2024/2025 financial year}. \url{https://www.kcca.go.ug/news/858/about-the-authority}
-
-\bibitem{kcca2024b}
-Kampala Capital City Authority (KCCA). (2024b, August 27). \emph{ED Kisaka vows commitment to solving solid waste management crisis in Kampala}. \url{https://kcca.go.ug/news/866}
-
-\bibitem{kcca2026}
-Kampala Capital City Authority (KCCA). (2026). \emph{Notice of request for expressions of interest: Remediation of the Kiteezi landfill and development of a new integrated waste management facility} (Ref. KCCA/WORKS/2025-2026/00141). \url{https://www.kcca.go.ug/media/docs/Detailed\%20EoI-\%20Remediation\%20of\%20the\%20Kiteezi\%20landfill,\%20and\%20Development\%20of\%20an\%20Integrated\%20Waste\%20Management\%20Facility\%20.pdf}
-
-\bibitem{kccand}
-Kampala Capital City Authority (KCCA). (n.d.). \emph{KCCA expands waste collection network with nine private collectors}. (Accessed 14 October 2026). \url{https://kcca.go.ug/news/1172/KCCA-EXPANDS-WASTE-COLLECTION-NETWORK-WITH-NINE-PRIVATE-COLLECTORS}
-
-\bibitem{kaza}
-Kaza, S., Yao, L. C., Bhada-Tata, P., and Van Woerden, F. (2018). \emph{What a Waste 2.0: A global snapshot of solid waste management to 2050}. World Bank. \url{https://datatopics.worldbank.org/what-a-waste/}
-
-\bibitem{komane}
-Komane, B. L., and Mathonsi, T. E. (2023). \emph{Design of a smart waste management system for the City of Johannesburg}. arXiv:2303.14436. \url{https://arxiv.org/pdf/2303.14436}
-
-\bibitem{kwagala}
-Kwagala, V., and Badoru, F. (2023). \emph{A smart municipal waste management system for route optimization and improved revenue collection}. Dissertation, Busitema University. \url{https://ir.busitema.ac.ug/handle/20.500.12283/4187}
-
-\bibitem{li}
-Li, X., and Grammenos, R. (2022). \emph{A smart recycling bin using waste image classification at the edge}. arXiv:2210.00448. \url{https://arxiv.org/pdf/2210.00448}
-
-\bibitem{medvedev}
-Medvedev, A., Fedchenkov, P., Zaslavsky, A., Anagnostopoulos, T., and Khoruzhnikov, S. (2015). Waste management as an IoT-enabled service in smart cities. In \emph{Internet of Things, Smart Spaces, and Next Generation Networks and Systems (NEW2AN 2015 and ruSMART 2015)}, Lecture Notes in Computer Science, vol. 9247, pp. 104--115. Springer. \url{https://doi.org/10.1007/978-3-319-23126-6_10}
-
-\bibitem{musoke}
-Musoke, R. (2022). \emph{A real-time smart dust bin for efficient waste management and separation using both GSM and GPS technology}. Undergraduate project report, Makerere University. \url{https://dissertations.mak.ac.ug/handle/20.500.12281/14641}
-
-\bibitem{mwesigwa}
-Mwesigwa, A. (2024, November 4). \emph{Kampala garbage, an issue much wider than just Kiteezi}. Economic Policy Research Centre. \url{https://eprcug.org/blog/kampala-garbage-an-issue-much-wider-than-just-kiteezi/}
-
-\bibitem{ngwomoya}
-Ngwomoya, A. (2018, September 19). \emph{Why Kampala is still grappling with waste}. Daily Monitor. \url{https://www.monitor.co.ug/uganda/special-reports/why-kampala-is-still-grappling-with-waste--1779244}
-
-\bibitem{okello}
-Okello, G. (2024, August 18). \emph{Kiteezi landfill collapse exposes critical need for waste management reform}. University of Cambridge Institute for Sustainability Leadership. \url{https://www.cisl.cam.ac.uk/news/blog/kiteezi-landfill-collapse-exposes-critical-need-waste-management-reform}
-
-\bibitem{petley}
-Petley, D. (2024, August 12). \emph{The 9 August 2024 garbage dump landslide at Kiteezi, Uganda}. The Landslide Blog, Eos. \url{https://eos.org/thelandslideblog/kiteezi-1}
-
-\bibitem{turyahebwa}
-Turyahebwa, M. (2023). \emph{A smart bin for waste sorting and real-time management using GSM/LTE technology}. Undergraduate project report, Makerere University. \url{https://dissertations.mak.ac.ug/handle/20.500.12281/18954}
-
-\bibitem{white}
-White, G., Cabrera, C., Palade, A., Li, F., and Clarke, S. (2020). \emph{WasteNet: Waste classification at the edge for smart bins}. arXiv:2006.05873. \url{https://arxiv.org/abs/2006.05873}
-
-\bibitem{yang}
-Yang, M., and Thung, G. (2016). \emph{TrashNet: Dataset and code for classification of trash for recyclability status}. \url{https://github.com/garythung/trashnet}
-
-\end{thebibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
 
 \end{document}
