@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{graphicx}
@@ -66,8 +66,8 @@ October, 2026\par
 \hypersetup{pageanchor=true}
 \pagenumbering{roman}
 
-\chapter*{Declaration}
-\addcontentsline{toc}{chapter}{Declaration}
+\section*{Declaration}
+\addcontentsline{toc}{section}{Declaration}
 
 We, Group \groupname, declare that this \doctypelower{} is our own original work. It has not been published, and it has not been submitted to any other university for the award of a degree.
 
@@ -88,8 +88,8 @@ We, Group \groupname, declare that this \doctypelower{} is our own original work
 \vspace{1.5em}
 Date: \dotfill\hspace{4cm}
 
-\chapter*{Approval}
-\addcontentsline{toc}{chapter}{Approval}
+\section*{Approval}
+\addcontentsline{toc}{section}{Approval}
 
 This \doctypelower{} is submitted for examination with the approval of the following supervisor.
 
@@ -106,13 +106,13 @@ College of Computing and Information Sciences\\
 Makerere University\\
 \supervisoremail
 
-\chapter*{Dedication}
-\addcontentsline{toc}{chapter}{Dedication}
+\section*{Dedication}
+\addcontentsline{toc}{section}{Dedication}
 
 We dedicate this \doctypelower{} to our parents and guardians, who have supported us throughout our studies.
 
-\chapter*{Acknowledgement}
-\addcontentsline{toc}{chapter}{Acknowledgement}
+\section*{Acknowledgement}
+\addcontentsline{toc}{section}{Acknowledgement}
 
 We thank our supervisor, \supervisor, for guiding us as we developed this project. We are also grateful to the members of our group, whose discussions shaped the system we are proposing.
 
@@ -125,8 +125,8 @@ We thank our supervisor, \supervisor, for guiding us as we developed this projec
 \input{scope_of_the_study}
 \input{significance_of_the_study}
 
-\renewcommand{\bibname}{References}
-\addcontentsline{toc}{chapter}{References}
+\renewcommand{\refname}{References}
+\addcontentsline{toc}{section}{References}
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
