@@ -25,7 +25,7 @@
 
 \newcommand{\groupname}{CS27-20}
 \newcommand{\supervisor}{Dr.\ Dragule Swaib}
-\newcommand{\supervisoremail}{dragule@gmail.com}
+\newcommand{\supervisoremail}{swaib.dragule@mak.ac.ug}
 
 \newcommand{\doctype}{Project Proposal}
 \newcommand{\doctypelower}{project proposal}
@@ -35,30 +35,32 @@
 \begin{titlepage}
 \centering
 \vspace*{0cm}
-\includegraphics[width=0.97\textwidth]{logo-000.png}\par
-\vspace{1.2cm}
-{\LARGE\bfseries A SMART BIN SYSTEM FOR CLASSIFICATION, FILL-UP\\PREDICTION AND SMART DISPOSAL\par}
-\vspace{0.8cm}
+\includegraphics[width=0.72\textwidth]{logo-000.png}\par
+\vspace{0.35cm}
+{\LARGE\bfseries AI-Enabled Smart Waste Sorting System for Circular Resource Utilisation in Hotels and Restaurants\par}
+\vspace{0.25cm}
 by\par
-\vspace{0.5cm}
+\vspace{0.15cm}
 {\large\groupname}\par
-\vspace{0.7cm}
+\vspace{0.25cm}
 {\large\bfseries Department of Computer Science\\
 School of Computing \& Informatics Technology\par}
-\vspace{0.7cm}
+\vspace{0.25cm}
 {A \doctype{} Submitted to the\\
 School of Computing and Informatics Technology for the Study Leading to a\\
 Project Report in Partial Fulfilment of the requirements\\
 for the Award of the Degree of Bachelor of Science in\\
 Computer Science of Makerere University\par}
-\vspace{0.8cm}
+\vspace{0.3cm}
 {\large\textbf{Supervisor:}\\
 \supervisor\par}
-\vspace{0.4cm}
+\vspace{0.25cm}
+\rule{0.9\textwidth}{0.4pt}\par
+\vspace{0.2cm}
 Department of Computer Science\\
 School of Computing \& Informatics Technology\\
 \supervisoremail\par
-\vspace{0.6cm}
+\vspace{0.25cm}
 October, 2026\par
 \end{titlepage}
 
@@ -140,7 +142,11 @@ RMSE & Root mean square error\\
 \pagenumbering{arabic}
 \chapter{Introduction}
 
-This chapter explains why we are proposing a smart bin system. It starts with how waste management in Kampala has reached its present state, moves to the problem that follows from this, and then gives the objectives, the scope and the significance of the study.
+Waste in Kampala is largely unseparated at source, and much of it is never collected \cite{kcca2026,mwesigwa}. Hotels and restaurants generate food waste and packaging daily, often in unsegregated bins \cite{walina,ssepuuya}, and collectors cannot tell how full a bin is before they arrive. Earlier smart bin work shows that automatic identification and remote monitoring are feasible \cite{musoke,turyahebwa,ahmed,white}, but none of the sources reviewed combines four-class sorting, per-compartment fill monitoring, collection-time prediction and disposal records, tested in Ugandan hotels and restaurants.
+
+This study proposes an AI-enabled IoT smart bin for selected hotels and restaurants in Kampala. The prototype will classify organic, plastic, paper and glass waste, route items into the correct compartment, hold uncertain items for manual checking, and monitor each compartment's fill level. A mobile application will show fill levels, predicted time to a collection threshold and alerts, and record collections and recipients.
+
+The prototype will be evaluated on classification precision and recall, sorting success, fill-level and prediction error, alert delivery time and user task completion, using data kept apart from training data. Findings will indicate how well the approach works at the selected sites, not citywide.
 
 \section{Background}
 
@@ -166,7 +172,7 @@ Our proposed system brings classification, compartment monitoring, fill-up predi
 
 \section{Problem statement}
 
-The background points to a chain of problems. Waste in Kampala is mostly not separated at source, a large share of it is not collected at all, and what is collected goes to a small number of disposal sites. Hotels and restaurants produce food waste and packaging every day, and unless the waste is separated where it is produced, material that could be recovered is mixed again and joins the rest. Local investigations confirm that restaurant waste in Kampala is often left unsegregated in substandard bins \cite{walina}, even though clean food waste has high potential for alternative circular recovery \cite{ssepuuya}. The collectors who serve these sites work on schedules that have been reported as irregular \cite{mwesigwa}, and they have no way of knowing how full a bin is before they arrive. We expect that bins at some sites are overflowing when the collector comes, while others are emptied when they are half full, and we will check this at the selected sites through observation and interviews. We do not assume that the situation is the same across Uganda.
+Waste in Kampala is mostly not separated at source, a large share of it is not collected at all, and what is collected goes to a small number of disposal sites. Hotels and restaurants produce food waste and packaging every day, and unless the waste is separated where it is produced, material that could be recovered is mixed again and joins the rest. Local investigations confirm that restaurant waste in Kampala is often left unsegregated in substandard bins \cite{walina}, even though clean food waste has high potential for alternative circular recovery \cite{ssepuuya}. The collectors who serve these sites work on schedules that have been reported as irregular \cite{mwesigwa}, and they have no way of knowing how full a bin is before they arrive. We expect that bins at some sites are overflowing when the collector comes, while others are emptied when they are half full, and we will check this at the selected sites through observation and interviews. We do not assume that the situation is the same across Uganda.
 
 Earlier prototypes show that automatic identification and remote monitoring can be done. The sources we have seen, however, do not show a prototype that combines four-class sorting, a separate fill level for each compartment, a prediction of the time until a collection threshold is reached, and a record of where the separated waste goes, tested in hotels and restaurants in Uganda. Several of them report no measured results or only results from open datasets. The specific problem of this study is therefore the lack of timely, per-compartment information on what waste has been separated, how full each compartment is and when it will need to be collected. We will develop and test a workflow that supplies this information to hotel staff and collectors under the conditions at selected sites.
 
@@ -177,11 +183,10 @@ To develop and evaluate a smart bin system for waste classification, fill-up pre
 \subsection{Specific objectives}
 
 \begin{enumerate}[leftmargin=*,itemsep=0.4em]
-\item To study current waste handling practices, collection arrangements and existing smart bin systems at selected hotels and restaurants in Kampala.
-\item To analyse the requirements of the proposed system and specify its functional and non-functional requirements.
-\item To design the bin, the sorting mechanism, the data storage, the prediction component and the mobile application based on the requirements.
-\item To implement a prototype that classifies organic, plastic, paper and glass waste, monitors compartment fill levels, predicts the time to a collection threshold, and supports collection alerts and disposal records.
-\item To test and evaluate the prototype in terms of classification performance, sorting success, fill-level measurement error, prediction error, alert delivery time and how well users complete collection tasks.
+\item To investigate existing waste-handling practices and requirements relevant to smart-bin design in selected hotels and restaurants in Kampala, Uganda.
+\item To design an AI-enabled IoT smart-bin system integrating local waste classification, automated sorting, compartment fill-level sensing, collection-time estimation and mobile monitoring.
+\item To develop a working prototype that classifies supported waste categories, automatically directs waste into designated compartments, monitors fill levels, estimates collection times and provides relevant alerts through a mobile interface.
+\item To evaluate the prototype's waste-classification performance, sorting success, fill-level measurement accuracy, collection-estimation performance and alert delivery under controlled conditions.
 \end{enumerate}
 
 \section{Scope of the study}
@@ -198,9 +203,7 @@ Fill level will be measured separately for each compartment. Time-stamped readin
 
 The mobile application will show fill levels, predictions and alerts. Authorised users will be able to acknowledge collection requests and record the collection time, the waste category and the recipient. Suitable organic material may be offered to composting or other approved recovery users once we have confirmed what they will accept. Plastic, paper and glass will only be offered to recipients who accept those materials. The application will record these transfers, but it will not guarantee a market or arrange the physical transport.
 
-\subsection{Study boundaries}
-
-The study covers the study of the current situation, requirements analysis, design, implementation and evaluation within the academic project period. It leaves out hazardous and medical waste, liquids, metal sorting, large mixed loads, vehicle route optimisation and payment services, and it will not attempt citywide deployment. Classification and prediction will be assessed on data kept apart from the training data. For prediction, we will test on later observations so that the model is not judged on its own training history. If the data collection period turns out to be short, we will state this as a limitation of the findings.
+The study will cover the investigation of current practices, requirements analysis, system design, prototype implementation and evaluation during the academic project period. It is limited to selected hotels and restaurants in Kampala and excludes hazardous and medical waste, liquids, metal sorting, large mixed loads, vehicle-route optimisation, payment services and citywide deployment. Classification will be evaluated using data kept separate from the training data, and prediction will be tested against later observations. If the data collection period is short, this will be reported as a limitation of the findings.
 
 \section{Significance of the study}
 
@@ -244,33 +247,33 @@ Prediction is a separate step from measurement. Ahmed et al. \cite{ahmed} foreca
 
 \section{Existing smart bin systems}
 
-Table~\ref{tab:existing} summarises the systems discussed in this review and in Chapter 1. The last column states what the source does not show.
+Table~\ref{tab:existing} compares four relevant systems with the proposed system using the same features. Where a feature or result is not described in the source available to us, it is marked as not reported; the proposed system's features and evaluation are planned, not measured results.
 
 \begin{table}[htbp]
 \centering
-\small
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{4.9cm}>{\raggedright\arraybackslash}p{5.6cm}}
+\scriptsize
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.25cm}>{\raggedright\arraybackslash}p{3.05cm}>{\raggedright\arraybackslash}p{3.05cm}>{\raggedright\arraybackslash}p{3.05cm}>{\raggedright\arraybackslash}p{3.4cm}}
 \hline
-\textbf{Source} & \textbf{What it does} & \textbf{What it does not show}\\
+\textbf{System} & \textbf{Classification and sorting} & \textbf{Fill sensing and prediction} & \textbf{Monitoring and records} & \textbf{Evidence and setting}\\
 \hline
-White et al. \cite{white} & Edge classification of six TrashNet classes with transfer learning; 0.970 accuracy & No organic class, no inference time or power, no fill monitoring\\
-Li and Grammenos \cite{li} & Edge classification on Jetson Nano and K210; 95.98\% and 95.58\% on seven classes; power and cost compared & No fill-level monitoring or collection support; the recycling-rate claim is not tested\\
-Ahmed et al. \cite{ahmed} & Forecasts bin status from IoT time series with four deep learning models & Does not classify waste; public bins, not hotels or restaurants\\
-Komane and Mathonsi \cite{komane} & Design with ultrasonic sensors, GPS, GSM, cameras and a user app, for Johannesburg & No measured accuracy or test results\\
-Kwagala and Badoru \cite{kwagala} & Smart bins and analytics for routes and billing in Kampala & Results given are expected, not measured (abstract only)\\
-Musoke \cite{musoke} & Fill-level sensors, material detection and cloud reporting (Makerere) & Performance and deployment unknown (abstract only)\\
-Turyahebwa \cite{turyahebwa} & Camera identification, sorting into compartments, LTE reporting (Makerere) & Performance and deployment unknown (abstract only)\\
-Walina \cite{walina} & Field assessment of restaurant food waste generation and storage at Makerere & Focuses on manual handling; does not implement a smart bin system\\
+Li and Grammenos \cite{li} & Waste-image classification on Jetson Nano and K210; automatic physical sorting not reported & Not reported & Inference on device; collection alerts and disposal records not reported & 95.98\% (Nano) and 95.58\% (K210) on their test set; not tested in Kampala hotels/restaurants\\
+Komane and Mathonsi \cite{komane} & Camera included; waste classes and automatic sorting not reported & Paired ultrasonic fill sensors; collection-time prediction not reported & GPS, GSM and a user app described; disposal records not reported & Design reports 99\% when sensors agree, but gives no measured test results\\
+Musoke \cite{musoke} & Material detection; classes and automatic sorting not established in the available abstract & Fill-level sensors; prediction not reported & Cloud reporting; collection and recipient records not reported & Performance and deployment details not available in the abstract\\
+Turyahebwa \cite{turyahebwa} & Camera-based identification and sorting into compartments & Fill sensing and prediction not established in the available abstract & LTE reporting; collection and recipient records not reported & Performance and deployment details not available in the abstract\\
+\textbf{Proposed system} & \textbf{Planned classification of organic, plastic, paper and glass, with automated sorting} & \textbf{Planned separate fill sensing for each compartment and estimation of time to a collection threshold} & \textbf{Planned mobile display, alerts, and collection and recipient records} & \textbf{Planned controlled evaluation, followed by a supervised trial at selected Kampala hotels/restaurants; results pending}\\
 \hline
 \end{tabular}
-\caption{Existing smart bin work reviewed}
+\setlength{\tabcolsep}{6pt}
+\caption{Comparison of four selected systems and the proposed system}
 \label{tab:existing}
 \end{table}
+\clearpage
 
 \section{Gap and justification of the proposed solution}
 
-From the sources we reviewed, the pieces of the proposed system exist separately. Classification at the edge has been shown on open datasets, fill-level measurement and forecasting have been shown on municipal bins, and prior studies at Makerere \cite{musoke,turyahebwa,walina} and Busitema \cite{kwagala} examine aspects of waste handling and smart bins in Uganda. What we did not find is a single prototype that (a) classifies organic, plastic, paper and glass waste with its own food-waste images, (b) measures the fill level of each compartment, (c) predicts the time to a collection threshold and compares it with a simple baseline, and (d) records the handover to a recipient, with all four tested in hotels or restaurants in Uganda and reported with measured results. We have not read the full Makerere reports, so this gap may be narrower than the abstracts suggest. We will check this during the study of the current situation.
+As Table~\ref{tab:existing} shows, Li and Grammenos \cite{li} demonstrate edge-based classification, while Komane and Mathonsi \cite{komane} describe fill sensing and communications but provide no measured test results. The available abstracts for the Makerere systems describe material detection or camera-based sorting and remote reporting \cite{musoke,turyahebwa}, but do not establish their measured performance or full feature set. Across these four comparisons, we did not find reported evidence of one system that combines classification of organic, plastic, paper and glass, separate fill monitoring and collection-time prediction for each compartment, and records of collection and recipients, evaluated at hotels or restaurants in Uganda. The full Makerere reports have not yet been reviewed, so this gap may be narrower than the abstracts suggest; we will check this during the study of the current situation.
 
 The case for the proposed solution rests on three points from the literature. First, the problem is real and documented locally: low collection rates, mixed waste, and a landfill collapse that cost lives \cite{mwesigwa,kcca2024b,petley}. Second, the technology is mature enough to build a prototype at low cost, as Li and Grammenos \cite{li} show for the hardware. Third, the evidence does not carry over to our setting, because the datasets lack organic waste and the reported accuracies are from conditions that are easier than a kitchen. A prototype tested on site is the way to find out.
 
